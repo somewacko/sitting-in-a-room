@@ -1,0 +1,5 @@
+output/
+sound/
+
+!sound/ir.wav
+!sound/portuguese.wav
