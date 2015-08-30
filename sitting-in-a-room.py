@@ -121,7 +121,7 @@ def stitch_signals(signals):
 
 
 def sitting_in_a_room(input_signal, ir_signal, num_passes,
-        conv_level=0.707, full=False, loud=False):
+        conv_level=0.5, full=False, loud=False):
     ''' Takes an input signal and an impulse response and convolves the signal
         by the impulse convolved 'num_passes' times by itself. '''
 
@@ -165,7 +165,7 @@ def sitting_in_a_room(input_signal, ir_signal, num_passes,
 
 
 def main(input_filename, ir_filename, num_passes, output_filename,
-        conv_level=0.707, full=False, loud=False):
+        conv_level=0.5, full=False, loud=False):
     ''' Main method - Runs 'sitting_in_a_room' for a given input and impulse
         response and writes it to a file. '''
 
@@ -253,9 +253,10 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         '-level',
-        default=0.707,
+        default=0.5,
         type=float,
-        help='The amount the convolved signal will be scaled. (Default 0.707)',
+        help='The amount the convolved signal will be scaled. (Default 0.5, '
+             'or-6dB)',
     )
     parser.add_argument(
         '-full',
