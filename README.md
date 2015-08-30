@@ -1,23 +1,28 @@
 # I Am Sitting In A Room...
-----------------
-Compute's a system inspired by [Alvin Lucier's "I Am Sitting In A Room"](https://youtu.be/2jU9mJbJsQ8) for any sound or room, for any number of iterations.
 
-This program is different from Alvin's piece in that it allows each sound to fully play out before starting a new iteration.
+Compute's a system inspired by [Alvin Lucier's "I Am Sitting In A Room"](https://youtu.be/2jU9mJbJsQ8) for a sound in a room defined by its impulse response.
+
+Essentially, it applies a convolution reverb over and over again, reinforcing the room's resonant frequencies.
+
+[My voice after being processed for 20 iterations.](https://drive.google.com/file/d/0B_jWp8d11aB5ckthQ0ZRNWR6NDA/view?usp=sharing)
 
 ### Usage:
 
-	python sitting-in-a-room.py {input file} {IR file} {num iterations}
+	python sitting-in-a-room.py {input filename} {IR filename} {options}
+	        -n, -num_passes : The number of iterations to compute. (Default 10)
+	        -l, -level : The amount of "room" you want for each pass. (Default 0.5, or -6dB)
+	        -full : Output all of the iterations side-by-side, much like the real thing.
 
 The two sounds must be in the `sound/` directory, and should be 1-channel, 16-bit .wav files, ideally with matching sample rates.
-	
-Outputs a file in `output/` with the name `out-{input}-{ir}-{n}.wav`
 
-### Todo:
+### Try it out for yourself!
 
-- Allow for stereo inputs and beyond.
-- Have an option to produce output files at each iteration.
-- Have an option to allow the sounds to overlap, more like Alvin's piece.
+- Get a microphone and some recording software.
+- Make a recording of yourself speaking, or making any noise. This is your input sound.
+- Place your microphone on the other side of the room and make a recoding of you clapping or hitting something very hard. This is your impulse response.
+- Place your two files in the `sound/` folder.
+- Run the program with your sounds!
 
 ### Credits:
 
-The example sound is from [freesound.org](http://freesound.org/) by user [digitopia](http://freesound.org/people/digitopia/sounds/76497/).
+The example sound provided is from [freesound.org](http://freesound.org/) by user [digitopia](http://freesound.org/people/digitopia/sounds/76497/).
