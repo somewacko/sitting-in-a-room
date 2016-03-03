@@ -1,6 +1,6 @@
 # I Am Sitting In A Room...
 
-Runs a process inspired by [Alvin Lucier's "I Am Sitting In A Room"](https://youtu.be/2jU9mJbJsQ8) for a sound in a room defined by its impulse response.
+Runs a process inspired by [Alvin Lucier's "I Am Sitting In A Room"](https://www.youtube.com/watch?v=fAxHlLK3Oyk) for a sound in a room defined by its impulse response.
 
 Essentially, it just applies a convolution reverb over and over again, reinforcing the room's resonant frequencies and smoothing out irregularities present in the original sound.
 
